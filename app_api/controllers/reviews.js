@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Loc = mongoose.model('Location');
 
-var sendJsonResponse = function(res, status, content) {
+var sendJSONresponse = function(res, status, content) {
   res.status(status);
   res.json(content);
 };
@@ -41,9 +41,10 @@ var doAddReview = function(req, res, location) {
     location.save(function(err, location) {
       var thisReview;
       if (err) {
+        console.log(err);
         sendJSONresponse(res, 400, err);
       } else {
-        updateAverageRating(location.id); //Add this method later
+        updateAverageRating(location._id); //Add this method later
         thisReview = location.reviews[location.reviews.length - 1];
         sendJSONresponse(res, 201, thisReview);
       }
