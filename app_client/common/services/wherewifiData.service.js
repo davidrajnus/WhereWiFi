@@ -1,4 +1,5 @@
-(function () {
+(function() {
+
   angular
     .module('wherewifiApp')
     .service('wherewifiData', wherewifiData);
@@ -12,4 +13,5 @@
       locationByCoords : locationByCoords
     };
   }
+
 })();

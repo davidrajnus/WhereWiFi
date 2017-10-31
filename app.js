@@ -8,7 +8,6 @@ require('./app_api/models/db');
 var uglifyJs = require("uglify-js");
 var fs = require('fs');
 
-
 var routes = require('./app_server/routes/index');
 var routesApi = require('./app_api/routes/index');
 // var users = require('./app_server/routes/users');
@@ -18,6 +17,7 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'app_server', 'views'));
 app.set('view engine', 'jade');
+
 var appClientFiles = [
   'app_client/app.js',
   'app_client/home/home.controller.js',
