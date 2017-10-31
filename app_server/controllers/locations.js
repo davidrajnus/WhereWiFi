@@ -21,7 +21,7 @@ var _showError = function(req, res, status) {
     title: title,
     content: content
   });
-}
+};
 
 var renderHomepage = function(req, res){
   res.render('locations-list', {
