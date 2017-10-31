@@ -1,3 +1,5 @@
+(function () {
+
 angular.module('wherewifiApp', ['ngRoute']);
 
 function config ($routeProvider) {
@@ -13,3 +15,5 @@ function config ($routeProvider) {
 angular
   .module('wherewifiApp')
   .config(['$routeProvider', config]);
+
+})();
