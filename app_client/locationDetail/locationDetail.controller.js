@@ -4,11 +4,15 @@
     .module('wherewifiApp')
     .controller('locationDetailCtrl', locationDetailCtrl);
 
-  locationDetailCtrl.$inject = ['$routeParams', '$modal', 'wherewifiData'];
-  function locationDetailCtrl ($routeParams, $modal, wherewifiData) {
+  locationDetailCtrl.$inject = ['$routeParams', '$location', '$modal', 'wherewifiData', 'authentication'];
+  function locationDetailCtrl ($routeParams, $location, $modal, wherewifiData, authentication) {
     var vm = this;
 
     vm.locationid = $routeParams.locationid;
+
+    vm.isLoggedIn = authentication.isLoggedIn();
+
+    vm.currentPath = $location.path();
 
     wherewifiData.locationById(vm.locationid)
       .success(function(data) {
