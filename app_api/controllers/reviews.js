@@ -10,6 +10,7 @@ var sendJSONresponse = function(res, status, content) {
 
 module.exports.reviewsCreate = function (req, res) {
   if(req.params.locationid) {
+    console.log("in reviewsCreate in api");
     Loc
       .findById(req.params.locationid)
       .select('reviews')
